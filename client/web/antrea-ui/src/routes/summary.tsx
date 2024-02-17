@@ -162,6 +162,17 @@ export default function Summary() {
                 <WaitForAPIResource ready={agentInfos !== undefined} text="Loading Agents Information">
                     <ComponentSummary title="Agents" data={agentInfos!} propertyNames={agentProperties} getProperties={agentPropertyValues} />
                 </WaitForAPIResource>
+                <CdsCard>
+                    <div cds-layout="vertical gap:md">
+                        <div cds-text="section" cds-layout="p-y:sm">
+                            Hello World - LFX Mentorship 2024_01 test task
+                        </div>
+                        <CdsDivider cds-card-remove-margin></CdsDivider>
+                        <div cds-text="body" cds-layout="p-y:sm">
+                            My Github ID is IRONICBo
+                        </div>
+                    </div>
+                </CdsCard>
             </div>
         </main>
     );
