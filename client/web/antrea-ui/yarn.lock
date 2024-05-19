@@ -3935,6 +3935,11 @@ react-dom@^18.3.1:
     loose-envify "^1.1.0"
     scheduler "^0.23.2"
 
+react-heatmap-grid@^1.0.0:
+  version "0.9.0"
+  resolved "https://registry.npmmirror.com/react-heatmap-grid/-/react-heatmap-grid-0.9.0.tgz#cf33ef491ae098bad5e857316e8ed0ae14718317"
+  integrity sha512-kJ+aHrNoyrzDTI09UyAEDORdRGc4iAyqii3liCNx3hs/Gg80baSpukiG/Wyoz3fR1Mr9+dzswXlC9Vl2SLQeDg==
+
 react-hook-form@^7.51.4:
   version "7.51.4"
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.51.4.tgz#c3a47aeb22b699c45de9fc12b58763606cb52f0c"

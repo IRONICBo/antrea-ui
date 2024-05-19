@@ -52,6 +52,23 @@ export interface ControllerInfo {
     apiPort?: number
 }
 
+export interface NodeIPLatencyStatsInfoList {
+    Items: NodeIPLatencyStatsInfo[]
+}
+
+export interface NodeIPLatencyStatsInfo {
+    name: string
+    NodeIPLatencyList: NodeIPLatencyEntry[],
+}
+
+export interface NodeIPLatencyEntry {
+    NodeName: string,
+    TargetIP: string,
+    LastSendTime: number,
+    LastRecvTime: number,
+    LastMeasuredRTT: number,
+}
+
 interface OVSInfo {
     version?: string
     bridgeName?: string
@@ -81,6 +98,17 @@ export const controllerInfoAPI = {
             `k8s/apis/crd.antrea.io/v1beta1/antreacontrollerinfos/antrea-controller`,
         ).then((response) => response.data as ControllerInfo).catch((error) => {
             console.error("Unable to fetch Controller Info");
+            handleError(error);
+        });
+    },
+};
+
+export const nodeIPLatencyStatsInfoAPI = {
+    fetch: async (): Promise<NodeIPLatencyStatsInfoList> => {
+        return api.get(
+            `k8s/apis/stats.antrea.io/v1alpha1/nodeiplatencystats`,
+        ).then((response) => response.data as NodeIPLatencyStatsInfoList).catch((error) => {
+            console.error("Unable to fetch NodeIPLatencyStatsInfoList Info");
             handleError(error);
         });
     },
